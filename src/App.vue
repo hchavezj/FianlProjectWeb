@@ -1,5 +1,6 @@
 <template>
   <nav>
+    <p>123 Main St, Mission, Tx 78572</p>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </nav>
@@ -16,7 +17,7 @@
 }
 
 nav {
-  padding: 30px;
+  padding: 0 30px;
 }
 
 nav a {
