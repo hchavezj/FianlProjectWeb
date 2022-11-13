@@ -8,13 +8,15 @@
         <router-link to="/contact">Contact</router-link>
       </div>
       <div class="bg-[#e8e9f5]">
-        <h1 class="text-[3rem] font-funk p-3">Krystal Clear Mental Health</h1>
+        <h1 class="text-[3rem] p-3">Krystal Clear Mental Health</h1>
       </div>
     </nav>
   </header>
 </template>
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Special+Elite&display=swap");
+
 nav a {
   font-weight: bold;
   color: #111111;

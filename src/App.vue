@@ -7,6 +7,9 @@
 
 <style>
 #app {
+  font-family: Quicksand, Avenir, Helvetica, Arial, sans-serif, "Special Elite";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   color: #cad3f5;
   color: #2c3e50;
   background-color: #eff1f5;
