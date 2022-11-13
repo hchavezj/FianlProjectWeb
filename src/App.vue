@@ -1,31 +1,47 @@
 <template>
-  <nav>
-    <p>123 Main St, Mission, Tx 78572</p>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <div id="app">
+    <NavBar />
+    <router-view />
+  </div>
 </template>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  color: #cad3f5;
+  color: #2c3e50;
+  background-color: #eff1f5;
+  background-color: #f9b6b5;
+  background-color: #24273a;
+  background-color: #fdfdfd;
+  margin: auto;
+}
+
+* {
+  font-family: Quicksand, Avenir, Helvetica, Arial, sans-serif, "Special Elite";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-nav {
-  padding: 0 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+body {
+  min-height: 100vh;
+  background-color: #eff1f5;
+  background-color: #f9b6b5;
+  background-color: #24273a;
+  background-color: #fdfdfd;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }
 </style>
+
+<script type="text/javascript">
+import NavBar from "@/components/NavBar.vue";
+export default {
+  components: {
+    NavBar,
+  },
+};
+</script>
