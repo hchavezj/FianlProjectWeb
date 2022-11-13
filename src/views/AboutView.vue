@@ -2,7 +2,7 @@
   <div class="container max-w-[80%] m-auto">
     <div class="card">
       <div class="flex">
-        <img src="../assets/profile2.png" alt="none" class="h-32" />
+        <img src="../assets/profile.jpg" alt="none" class="h-32" />
         <table class="table-auto border-separate border-spacing-x-2">
           <tr>
             <td class="text-left">Name:</td>
@@ -34,7 +34,7 @@
 }
 
 img {
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1), 0 5px 5px 0 rgba(0, 0, 0, 0.14);
   filter: drop-shadow(0 0 0.8rem rgb(45, 54, 71));
 }
 </style>
