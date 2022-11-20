@@ -1,14 +1,18 @@
 <template>
   <header>
-    <nav class="pb-20">
-      <div class="flex space-x-4 justify-center text-[1.3rem] p-2">
-        <router-link to="/">Home</router-link>
-        <router-link to="/about">About</router-link>
-        <router-link to="/login">Login</router-link>
-        <router-link to="/contact">Contact</router-link>
+    <nav class="pb-4">
+      <div class="titleimage flex bg-cover bg-center h-[150px] m-auto" style="">
+        <h1 class="text-[3rem] m-auto">{{ title }}</h1>
       </div>
-      <div class="bg-[#e8e9f5]">
-        <h1 class="text-[3rem] p-3">Krystal Clear Mental Health</h1>
+      <div class="h-[25px] bg-[#f3dfdf]">
+        <div class="float-left pl-2 space-x-4 m-auto">
+          <router-link to="/">Home</router-link>
+          <router-link to="/about">About</router-link>
+          <router-link to="/contact">Contact</router-link>
+        </div>
+        <div class="float-right pr-2 m-auto">
+          <router-link to="/login">Login</router-link>
+        </div>
       </div>
     </nav>
   </header>
@@ -16,6 +20,10 @@
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Special+Elite&display=swap");
+
+.titleimage {
+  background-image: url("../assets/3ccc.jpg");
+}
 
 nav a {
   font-weight: bold;
@@ -34,5 +42,6 @@ nav a.router-link-exact-active {
 <script>
 export default {
   name: "NavBar",
+  props: ["title"],
 };
 </script>

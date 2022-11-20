@@ -1,5 +1,5 @@
 <template>
-  <div class="container max-w-[80%] m-auto">
+  <div class="container max-w-[80%] m-auto min-h-full">
     <div class="card">
       <div class="flex">
         <img src="../assets/profile.jpg" alt="none" class="h-32" />

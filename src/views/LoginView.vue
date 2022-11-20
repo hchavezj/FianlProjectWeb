@@ -1,8 +1,8 @@
 <template>
   <div class="login-page w-[360px] p-[8% 0 0] m-auto">
-    <div class="form">
+    <div class="form bg-white">
       <form
-        class="register-form relative z-[1] bg-white max-w-360 m-[0 auto 100px] text-center"
+        class="register-form relative z-[1] bg-white max-w-360 m-auto text-center"
       >
         <input type="text" placeholder="name" />
         <input type="password" placeholder="password" />
