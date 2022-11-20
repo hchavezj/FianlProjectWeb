@@ -1,5 +1,5 @@
 <template>
-  <div class="card max-w-[80%] m-auto">
+  <div class="card">
     <p class="font-funk text-[40px]">Contact Information</p>
     <table class="table-auto m-auto w-[400px] border-separate border-spacing-4">
       <tr>
@@ -21,15 +21,6 @@
     </table>
   </div>
 </template>
-
-<style scoped>
-.card {
-  background: #fff;
-  margin: 0 auto 100px;
-  padding: 45px;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-}
-</style>
 
 <script>
 // @ is an alias to /src

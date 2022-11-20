@@ -40,7 +40,7 @@
 form button {
   text-transform: uppercase;
   outline: 0;
-  background: #4caf50;
+  background: #ee9ccc;
   width: 100%;
   border: 0;
   padding: 15px;
@@ -53,7 +53,7 @@ form button {
 .form button:hover,
 .form button:active,
 .form button:focus {
-  background: #43a047;
+  background: #d68ed0;
 }
 .form .message {
   margin: 15px 0 0;
@@ -61,7 +61,7 @@ form button {
   font-size: 12px;
 }
 .form .message a {
-  color: #4caf50;
+  color: #c45dc4;
   text-decoration: none;
 }
 .form .register-form {

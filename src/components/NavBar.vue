@@ -1,7 +1,10 @@
 <template>
   <header>
-    <nav class="pb-4">
-      <div class="titleimage flex bg-cover bg-center h-[150px] m-auto" style="">
+    <nav class="pb-0 mb-2">
+      <div
+        class="titleimage flex bg-cover bg-center h-[150px] mt-2 mb-2"
+        style=""
+      >
         <h1 class="text-[3rem] m-auto">{{ title }}</h1>
       </div>
       <div class="h-[25px] bg-[#f3dfdf]">
@@ -27,15 +30,12 @@
 
 nav a {
   font-weight: bold;
-  color: #111111;
-  color: #898ba3;
+  color: #5c5e7a;
 }
 
 nav a.router-link-exact-active {
-  color: #8aadf4;
-  color: #363a5f;
-  color: #a0adeb;
-  filter: drop-shadow(0 0 0.06rem rgb(120, 167, 243));
+  color: #55596b;
+  filter: drop-shadow(0 0 0.06rem rgb(80, 69, 69));
 }
 </style>
 
