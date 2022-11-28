@@ -1,11 +1,8 @@
 <template>
   <header>
     <nav class="pb-0 mb-2">
-      <div
-        class="titleimage flex bg-cover bg-center h-[150px] mt-2 mb-2"
-        style=""
-      >
-        <h1 class="text-[3rem] m-auto">{{ title }}</h1>
+      <div class="titleimage flex bg-cover bg-center h-[150px] mt-2 mb-2">
+        <h1 class="text-[3rem] m-auto">Krystal Clear Mental Health</h1>
       </div>
       <div class="h-[25px] bg-[#f3dfdf]">
         <div class="float-left pl-2 space-x-4 m-auto">
@@ -13,7 +10,10 @@
           <router-link to="/about">About</router-link>
           <router-link to="/contact">Contact</router-link>
         </div>
-        <div class="float-right pr-2 m-auto">
+        <div v-if="$store.state.user" class="float-right pr-2 m-auto">
+          <router-link to="/login">Logout</router-link>
+        </div>
+        <div v-else class="float-right pr-2 m-auto">
           <router-link to="/login">Login</router-link>
         </div>
       </div>
@@ -40,8 +40,16 @@ nav a.router-link-exact-active {
 </style>
 
 <script>
+import { onBeforeMount } from "vue";
+import { useStore } from "vuex";
+
 export default {
   name: "NavBar",
-  props: ["title"],
+  setup() {
+    const store = useStore();
+    onBeforeMount(() => {
+      store.dispatch("fetchUser");
+    });
+  },
 };
 </script>

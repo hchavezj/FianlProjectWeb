@@ -1,113 +1,149 @@
 <template>
-  <div class="login-page w-[360px] p-[8% 0 0] m-auto">
-    <div class="form bg-white">
-      <form
-        class="register-form relative z-[1] bg-white max-w-360 m-auto text-center"
-      >
-        <input type="text" placeholder="name" />
-        <input type="password" placeholder="password" />
-        <input type="text" placeholder="email address" />
-        <button>create</button>
-        <p class="message">Already registered? <a href="#">Sign In</a></p>
+  <main class="login">
+    <section class="forms">
+      <form class="register" @submit.prevent="register">
+        <h2>Register</h2>
+        <input
+          type="email"
+          placeholder="Email address"
+          v-model="register_form.email"
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          v-model="register_form.password"
+        />
+        <input type="submit" value="Register" />
       </form>
-      <form class="login-form">
-        <input type="text" placeholder="username" />
-        <input type="password" placeholder="password" />
-        <button>login</button>
-        <p class="message">Not registered? <a href="#">Create an account</a></p>
+
+      <form class="login" @submit.prevent="login">
+        <h2>Login</h2>
+        <input
+          type="email"
+          placeholder="Email address"
+          v-model="login_form.email"
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          v-model="login_form.password"
+        />
+        <input type="submit" value="Login" />
       </form>
-    </div>
-  </div>
+    </section>
+  </main>
 </template>
 
-<style scoped>
-.form {
-  padding: 45px;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-}
-
-.form input {
-  outline: 0;
-  background: #f2f2f2;
-  width: 100%;
-  border: 0;
-  margin: 0 0 15px;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
-}
-
-form button {
-  text-transform: uppercase;
-  outline: 0;
-  background: #ee9ccc;
-  width: 100%;
-  border: 0;
-  padding: 15px;
-  color: #ffffff;
-  font-size: 14px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
-  cursor: pointer;
-}
-.form button:hover,
-.form button:active,
-.form button:focus {
-  background: #d68ed0;
-}
-.form .message {
-  margin: 15px 0 0;
-  color: #b3b3b3;
-  font-size: 12px;
-}
-.form .message a {
-  color: #c45dc4;
-  text-decoration: none;
-}
-.form .register-form {
-  display: none;
-}
-.container {
-  position: relative;
-  z-index: 1;
-  max-width: 300px;
-  margin: 0 auto;
-}
-.container:before,
-.container:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-.container .info {
-  margin: 50px auto;
-  text-align: center;
-}
-.container .info h1 {
-  margin: 0 0 15px;
-  padding: 0;
-  font-size: 36px;
-  font-weight: 300;
-  color: #1a1a1a;
-}
-.container .info span {
-  color: #4d4d4d;
-  font-size: 12px;
-}
-.container .info span a {
-  color: #000000;
-  text-decoration: none;
-}
-.container .info span .fa {
-  color: #ef3b3a;
-}
-</style>
-
 <script>
-// @ is an alias to /src
+import { ref } from "vue";
+import { useStore } from "vuex";
 
 export default {
-  name: "LoginView",
-  components: {},
+  setup() {
+    const login_form = ref({});
+    const register_form = ref({});
+    const store = useStore();
+
+    const login = () => {
+      store.dispatch("login", login_form.value);
+    };
+
+    const register = () => {
+      store.dispatch("register", register_form.value);
+    };
+
+    return {
+      login_form,
+      register_form,
+      login,
+      register,
+    };
+  },
 };
 </script>
+
+<style>
+.forms {
+  display: flex;
+  min-height: calc(100vh - 300px);
+}
+
+form {
+  flex: 1 1 0%;
+  padding: 8rem 1rem 1rem;
+}
+
+form.register {
+  color: #fff;
+  background-color: rgb(245, 66, 101);
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(245, 66, 101) 0%,
+    rgb(189, 28, 60) 100%
+  );
+}
+
+h2 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+input {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 0.5rem 0rem;
+}
+
+input:not([type="submit"]) {
+  opacity: 0.8;
+  transition: 0.4s;
+}
+
+input:focus:not([type="submit"]) {
+  opacity: 1;
+}
+
+input::placeholder {
+  color: inherit;
+}
+
+form.register input:not([type="submit"]) {
+  color: #fff;
+  border-bottom: 2px solid #fff;
+}
+
+form.login input:not([type="submit"]) {
+  color: #2c3e50;
+  border-bottom: 2px solid #2c3e50;
+}
+
+form.login input[type="submit"] {
+  background-color: rgb(245, 66, 101);
+  color: #fff;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+form.register input[type="submit"] {
+  background-color: #fff;
+  color: rgb(245, 66, 101);
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+</style>
